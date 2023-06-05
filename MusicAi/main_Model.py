@@ -126,14 +126,3 @@ if __name__ == "__main__":
         f2.plot(epochs, result.history['val_loss'], c='r', label='Valid loss')
         plt.legend(loc='lower left')
         plt.grid(True)
-
-
-    print()
-    print("1")
-    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im0.png')])
-    print(test[0])
-    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im1.png')])
-    print(test[0])
-    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im2.png')])
-    print(test[0])
-
