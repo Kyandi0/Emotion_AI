@@ -9,7 +9,7 @@ import numpy as np
 emotion_labels = ['angry', 'fearful', 'happy', 'sad', 'surprised']
 
 def music_play(emotion):
-    songsPath = "E:/School/.Studia/python/ProjektAi/music/"
+    songsPath = "E:/ProjektAi/music/"
     songsPath=songsPath+emotion
     num_of_songs = 0
     for p in os.listdir(songsPath):
