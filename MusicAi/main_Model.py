@@ -1,22 +1,15 @@
-import tensorflow as tf
 import numpy as np
 import os
-import sys
 import cv2
-import matplotlib.pyplot as plt
-import pickle
-import random
-import pandas as pd
+from matplotlib import pyplot as plt
 
 from sklearn.model_selection import train_test_split
-from tensorflow import keras
 from keras import Sequential
-from keras.optimizers import Adam
-from keras.layers import BatchNormalization,Dense,Dropout,Activation, Flatten,Conv2D,MaxPooling2D
+from keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
 from keras.utils import to_categorical
 import pickle
 
-path='E:\\School\\.Studia\\python\\ProjektAi\\train'
+path='emotions\\train'
 img_size=48
 x_data=[]
 y_data=[]
@@ -111,14 +104,11 @@ if __name__ == "__main__":
     model.compile(loss='categorical_crossentropy',
                   optimizer='adam',
                   metrics=['accuracy'])
-
-
     def prepare(filepath):
         img_array = cv2.imread(filepath, cv2.IMREAD_GRAYSCALE)
         new_array = cv2.resize(img_array, (48, 48))
         new_image = new_array.reshape(-1, 48, 48, 1)
         return new_image
-
 
     X_train, X_val, y_train, y_val = train_test_split(X_Data, Y_Data, test_size=0.2, random_state=42)
     result = model.fit(X_train, y_train, batch_size=128, epochs=35, validation_data=(X_val, y_val))
@@ -137,47 +127,48 @@ if __name__ == "__main__":
         plt.legend(loc='lower left')
         plt.grid(True)
 
+
     print()
     print("1")
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\happy\\im0.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im0.png')])
     print(test[0])
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\angry\\im1.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im1.png')])
     print(test[0])
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\sad\\im2.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im2.png')])
     print(test[0])
 
     print()
     print("2")
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\surprised\\im3.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im3.png')])
     print(test[0])
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\fearful\\im4.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im4.png')])
     print(test[0])
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\angry\\im5.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im5.png')])
     print(test[0])
 
     print()
     print("3")
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\angry\\im6.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im6.png')])
     print(test[0])
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\happy\\im7.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im7.png')])
     print(test[0])
-    test = model.predict([prepare(filepath='E:\\School\\.Studia\\python\\ProjektAi\\train\\sad\\im8.png')])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im8.png')])
     print(test[0])
 
-    # print()
-    # print("4")
-    # test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im9.png')])
-    # print(test[0])
-    # test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im10.png')])
-    # print(test[0])
-    # test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im11.png')])
-    # print(test[0])
-    #
-    # print()
-    # print("5")
-    # test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im12.png')])
-    # print(test[0])
-    # test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im13.png')])
-    # print(test[0])
-    # test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im14.png')])
-    # print(test[0])
+    print()
+    print("4")
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im9.png')])
+    print(test[0])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im10.png')])
+    print(test[0])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im11.png')])
+    print(test[0])
+
+    print()
+    print("5")
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im12.png')])
+    print(test[0])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im13.png')])
+    print(test[0])
+    test = model.predict([prepare(filepath='C:\\Users\\Admin\\Desktop\\im14.png')])
+    print(test[0])
