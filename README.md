@@ -11,7 +11,7 @@ Celem jest rozpoznanie emocji po zdjęciu twarzy i wylosowanie głosu pasująceg
 - Pickle
 
 # Dane:
-Dane służące do ćwiczenia i testowania pochodzą z https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer?select=train, natomiast dźwięki z https://www.kaggle.com/datasets/dileepathe/audio-emotion-dataset. Ograniczyliśmy emocje do angry, fearful, happy, sad i surprised, ponieważ pozostałe posiadały zbyt mało próbek.
+Dane służące do ćwiczenia i testowania pochodzą z https://www.kaggle.com/datasets/ananthu017/emotion-detection-fer, natomiast dźwięki z https://www.kaggle.com/datasets/dileepathe/audio-emotion-dataset. Ograniczyliśmy emocje do angry, fearful, happy, sad i surprised, ponieważ pozostałe posiadały zbyt mało próbek.
 
 # Działanie:
 Main.py jest aplikacją, która tworzy plik z danymi i etykietami (o ile już nie istnieją). Następnie tworzy model składający się trzech warstw Conv2D oraz czterech Dense i uczy go na podstawie wcześniej utworzonego pliku. Po zakończeniu procesu nauki wyświetla okno PyPlot z wynikami.
