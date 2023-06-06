@@ -62,3 +62,7 @@ Wysoka wartość parametru Dropout() wynika z tego, że zbyt szybko następował
 
 # Wyniki:
 Model na zbiorze testowym osiąga sprawność około 64%. Przy losowym wybieraniu byłoby to 20%. Pomimo, że wynik nie jest bardzo wysoki, należy pamiętać, że emocje są trudne do rozpoznania, nie tylko dla maszyny, a dataset zawierał tylko po 4000 zdjęć każdego typu, z czego niewielka część była uszkodzona.
+![PyPlotOut1](Pictures/pyPlot1.PNG)
+Na powyższym obrazku przedstawiono wynik dla ustawienia "dropout=0.10".
+![PyPlotOut2](Pictures/pyPlot2.PNG)
+Na powyższym obrazku przedstawiono wynik dla ustawienia "dropout=0.25".
